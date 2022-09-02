@@ -1,0 +1,90 @@
+<div class="grid_container">
+  <div class="block_1">
+    <div class="digital_lab">
+      <img src="../../assets/image.png" />
+    </div>
+    <div class="typsa_lab">
+      <img src="../../assets/logo-grupo-Typsa-300x300-1.png" />
+    </div>
+  </div>
+
+
+    <form (ngSubmit)="sendRegisterForm(registerForm)" #registerForm="ngForm" class="block_2">
+
+      <div class="logo">
+        <img src="../../assets/logo-grupo-Typsa-300x300-1.png"  />
+
+    </div>
+
+    <div class="logo_mobile">
+      <div class="logo_mobile-typsa">
+        <img src="../../assets/image.png" />
+      </div>
+      <div class="logo_mobile-lab">
+        <img src="../../assets/logo-grupo-Typsa-300x300-1.png" />
+      </div>
+    </div>
+      <div class="input-container">
+        <div class="title">
+          <h2>
+              Registro de usuario
+          </h2>
+      </div>
+        <div class="input-element">
+          <label class="label">Nombre</label>
+          <input ngModel name="name" placeholder="Ingresa tu nombre" />
+      </div>
+      <div class="input-element">
+        <label  class="label">Apellido</label>
+        <input ngModel name="surname"  placeholder="Ingresa tu apellido" />
+      </div>
+          <div class="input-element">
+            <div class="input-element-verifyEmail">
+              <label class="label">Email</label>
+              <div *ngIf="verifying" style="display: flex ; justify-content: center; align-items:center; gap: 1rem;">
+                <span  ><i style="font-size: 0.5rem;color: cornflowerblue; font-weight: 700;">Verificando correo electrónico..</i></span>
+                <div class="spinner"></div>
+              </div>
+              <span class="input-element-verifyEmail-state" *ngIf="verified">
+                <i style="font-size: 0.5rem;color:lightgreen">Tienes permiso para registrarte</i>
+                <img src="https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_1280.png"width="12" height="12" />
+              </span>
+              <span class="input-element-verifyEmail-state" *ngIf="unverified">
+                <img src="https://www.downloadclipart.net/large/18082-error-button-design.png"width="12" height="12" />
+                <i style="font-size: 0.5rem; color:red">No tienes permiso para registrarte en dLab</i>
+
+              </span>
+            </div>
+              <input (change)="captureEmail($event)" ngModel name="email" placeholder="Ingresa tu correo" />
+          </div>
+
+          <div class="input-element">
+            <label class="label">Contraseña</label>
+            <input ngModel type="password" name="password" placeholder="Ingresa tu contraseña" />
+          </div>
+          <div class="input-element">
+            <label  class="label">Repite tu contraseña</label>
+            <input (change)="checkPass($event)" ngModel type="password" name="passwordRepeated" placeholder="Ingresa nuevamente tu contraseña" />
+          </div>
+
+          <div class="form-button">
+            <button type="submit">
+              Registrarse
+          </button>
+          <span class="form-footer-without-account">
+            ¿Ya tienes una cuenta?
+            <a [routerLink]="['/login']"  class="form-footer-create-account"><span style="color: #3987fc; font-weight: 900; ">Inicia sesión</span></a>
+        </span>
+
+          </div>
+      </div>
+
+
+
+      </form>
+
+
+
+
+
+</div>

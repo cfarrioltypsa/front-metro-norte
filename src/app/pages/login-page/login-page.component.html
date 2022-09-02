@@ -1,0 +1,72 @@
+
+
+<div class="grid_container">
+  <div class="block_1">
+    <div class="digital_lab">
+      <img src="../../assets/image.png" />
+    </div>
+    <div class="typsa_lab">
+      <img src="../../assets/logo-grupo-Typsa-300x300-1.png" />
+    </div>
+  </div>
+  <form (ngSubmit)="handleLoginForm(loginForm)" class="block_2" #loginForm="ngForm">
+    <div class="container-block-2">
+    </div>
+      <div class="logo">
+            <img src="../../assets/logo-grupo-Typsa-300x300-1.png"  />
+      </div>
+      <div class="logo_mobile">
+        <div class="logo_mobile-typsa">
+          <img src="../../assets/image.png" />
+        </div>
+        <div class="logo_mobile-lab">
+          <img src="../../assets/logo-grupo-Typsa-300x300-1.png" />
+        </div>
+      </div>
+
+
+      <div class="input-container">
+        <div class="title">
+          <h2>
+              ¡Bienvenido!
+          </h2>
+      </div>
+
+          <div class="input-element">
+              <label class="label">Email</label>
+              <input ngModel name="user" placeholder="Ingresa tu correo" />
+          </div>
+
+          <div class="input-element">
+            <div class="input-element_password">
+              <label class="label">Contraseña</label>
+              <a [routerLink]="['/forgot-password']">¿No recuerdas tu contraseña?</a>
+            </div>
+            <input ngModel name="pass" type="password" placeholder="Ingresa tu contraseña" />
+          </div>
+
+          <div class="form-button">
+            <button type="submit">
+              Iniciar sesión
+          </button>
+          <span class="form-footer-without-account">
+            ¿Todavia no tienes una cuenta?
+            <a [routerLink]="['/register']" class="form-footer-create-account"><span style="color: #3987fc; font-weight: 900; ">Crea una ahora</span></a>
+        </span>
+
+          </div>
+
+          <div class="form-footer">
+        </div>
+
+      </div>
+
+
+  </form>
+
+
+
+
+
+</div>
+
